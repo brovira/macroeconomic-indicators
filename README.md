@@ -15,7 +15,9 @@ This repository provides a Streamlit application that visualizes several macroec
    ```
 3. Obtain a FRED API key from [Federal Reserve Economic Data](https://fred.stlouisfed.org/) and set it as an environment variable:
    ```bash
+
    export FRED_API_KEY=8eaa91c32107a306db4ec5d8f097ca8d
+
    ```
 4. Run the dashboard:
    ```bash
