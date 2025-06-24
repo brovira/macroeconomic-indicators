@@ -17,7 +17,7 @@ This repository provides a Streamlit application that visualizes several macroec
    ```bash
 
 
-   export FRED_API_KEY=8eaa91c32107a306db4ec5d8f097ca8d
+   export FRED_API_KEY=
 
 
    ```
