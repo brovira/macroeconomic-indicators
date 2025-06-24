@@ -24,6 +24,7 @@ def load_yfinance_data(symbol: str, start: dt.date, end: dt.date) -> pd.Series:
 def load_fred_data(series_id: str, start: dt.date, end: dt.date, _fred: Fred) -> pd.Series:
     """Fetch series data from the FRED API."""
     series = _fred.get_series(series_id, observation_start=start, observation_end=end)
+
     series.index = pd.to_datetime(series.index)
     series.name = series_id
     return series
@@ -39,7 +40,9 @@ def main() -> None:
     start_date = st.sidebar.date_input("Start", value=default_start)
     end_date = st.sidebar.date_input("End", value=today)
 
-    fred_api_key = os.environ.get("FRED_API_KEY")
+    fred_api_key = '8eaa91c32107a306db4ec5d8f097ca8d' """os.environ.get("FRED_API_KEY")"""
+
+
     if not fred_api_key:
         st.error("FRED_API_KEY environment variable not set. FRED data cannot be loaded.")
         return
@@ -67,6 +70,7 @@ def main() -> None:
             fig = px.line(series, title=name, labels={"value": name, "index": "Date"})
             fig.update_layout(height=500)
             st.plotly_chart(fig, use_container_width=True)
+
 
             df = pd.DataFrame(series)
             if df.shape[1] == 1:
