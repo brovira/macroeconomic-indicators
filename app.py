@@ -40,7 +40,7 @@ def main() -> None:
     start_date = st.sidebar.date_input("Start", value=default_start)
     end_date = st.sidebar.date_input("End", value=today)
 
-    fred_api_key = 'ed2a1d034495ba18b9e7dd2c7236f406'
+    fred_api_key = '???????????????????????????'
 
 
     if not fred_api_key:
