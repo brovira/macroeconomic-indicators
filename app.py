@@ -39,7 +39,7 @@ def main() -> None:
     start_date = st.sidebar.date_input("Start", value=default_start)
     end_date = st.sidebar.date_input("End", value=today)
 
-    fred_api_key = os.environ.get("FRED_API_KEY")
+    fred_api_key = 8eaa91c32107a306db4ec5d8f097ca8d """os.environ.get("FRED_API_KEY")"""
     if not fred_api_key:
         st.error("FRED_API_KEY environment variable not set. FRED data cannot be loaded.")
         return
